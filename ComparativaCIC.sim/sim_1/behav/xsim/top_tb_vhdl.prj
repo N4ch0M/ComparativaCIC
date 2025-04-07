@@ -1,0 +1,8 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../ComparativaCIC.ip_user_files/ip/cic_x10_0/cic_x10_cic_compiler_v4_0_i0/sim/cic_x10_cic_compiler_v4_0_i0.vhd" \
+"../../../../ComparativaCIC.ip_user_files/ip/cic_x10_0/cic_x10_fir_compiler_v7_2_i0/sim/cic_x10_fir_compiler_v7_2_i0.vhd" \
+"../../../../ComparativaCIC.ip_user_files/ip/cic_x10_0/cic_x10_mult_gen_v12_0_i0/sim/cic_x10_mult_gen_v12_0_i0.vhd" \
+
+# Do not sort compile order
+nosort

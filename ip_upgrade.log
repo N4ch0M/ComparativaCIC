@@ -1,0 +1,37 @@
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
+| Date         : Sat Apr  5 14:09:35 2025
+| Host         : OFICINA-HP running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z045ffg900-2
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'cic_x10_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of cic_x10_0 (User_Company:SysGen:cic_x10:1.0) from (Rev. 374702875) to (Rev. 374767275)
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
+| Date         : Fri Apr  4 20:14:20 2025
+| Host         : OFICINA-HP running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z045ffg900-2
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'cic_x10_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of cic_x10_0 (User_Company:SysGen:cic_x10:1.0) from (Rev. 374693194) to (Rev. 374702875)
+
