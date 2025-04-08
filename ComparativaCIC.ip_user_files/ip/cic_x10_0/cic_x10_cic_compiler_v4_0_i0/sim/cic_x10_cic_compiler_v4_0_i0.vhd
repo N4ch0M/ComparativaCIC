@@ -165,7 +165,7 @@ BEGIN
       C_MIN_RATE => 10,
       C_MAX_RATE => 10,
       C_SAMPLE_FREQ => 1,
-      C_CLK_FREQ => 20,
+      C_CLK_FREQ => 10,
       C_USE_STREAMING_INTERFACE => 1,
       C_FAMILY => "zynq",
       C_XDEVICEFAMILY => "zynq",

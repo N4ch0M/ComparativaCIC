@@ -23,8 +23,6 @@ vmap mult_gen_v12_0_17 questa_lib/msim/mult_gen_v12_0_17
 
 vlog -work xpm  -incr -mfcu -sv "+incdir+../../../ipstatic/work/hdl" \
 "C:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
-"C:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv" \
-"C:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
 
 vcom -work xpm  -93 \
 "C:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_VCOMP.vhd" \

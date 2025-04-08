@@ -48,7 +48,7 @@
 
 
 // IP VLNV: User_Company:SysGen:cic_x10:1.0
-// IP Revision: 374767275
+// IP Revision: 374947813
 
 `timescale 1ns/1ps
 

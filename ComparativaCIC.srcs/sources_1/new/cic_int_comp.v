@@ -1,8 +1,8 @@
 //! @title CIC interpolation filter with FIR compensation
-//! @brief Parametrizable CIC filter (M delays, R interpolation factor, N sections) with FIR compensation
 //! @author J. I. Morales (morales.juan.ignacio@gmail.com)
 //! @version 1.2
 //! @date 28/03/25
+//! @brief Parametrizable CIC filter (M delays, R interpolation factor, N sections) with FIR compensation
 //! Calculo de Width = NBits + log2​(M × N)
 
 `timescale 1ns / 1ps

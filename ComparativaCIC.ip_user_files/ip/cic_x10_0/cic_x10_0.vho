@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: User_Company:SysGen:cic_x10:1.0
--- IP Revision: 374767275
+-- IP Revision: 374947813
 
 -- The following code must appear in the VHDL architecture header.
 

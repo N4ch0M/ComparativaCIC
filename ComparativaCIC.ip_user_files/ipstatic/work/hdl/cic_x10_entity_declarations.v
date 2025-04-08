@@ -36,6 +36,64 @@
 
 `include "conv_pkg.v"
 `timescale 1 ns / 10 ps
+module cic_x10_xlregister (d, rst, en, ce, clk, q);
+   parameter d_width = 5;
+   parameter init_value = 'b0;
+
+   input [d_width-1:0] d;
+   input rst, en, ce, clk;
+   output [d_width-1:0] q;
+
+   wire internal_clr, internal_ce;
+
+   assign internal_clr = rst & ce;
+   assign internal_ce  = ce & en;
+
+   synth_reg_w_init #(.width(d_width),
+                      .init_index(2),
+                      .init_value(init_value),
+                      .latency(1))
+   synth_reg_inst(.i(d),
+                  .ce(internal_ce),
+                  .clr(internal_clr),
+                  .clk(clk),
+                  .o(q));
+endmodule
+
+`timescale 1 ns / 10 ps
+module sysgen_shift_a5a7fbd1a7 (
+  input [(23 - 1):0] ip,
+  output [(23 - 1):0] op,
+  input clk,
+  input ce,
+  input clr);
+  wire signed [(23 - 1):0] ip_1_23;
+  localparam signed [(23 - 1):0] const_value = 23'sb00000000000000000000000;
+  reg signed [(23 - 1):0] op_mem_46_20[0:(1 - 1)];
+  initial
+    begin
+      op_mem_46_20[0] = 23'b00000000000000000000000;
+    end
+  wire signed [(23 - 1):0] op_mem_46_20_front_din;
+  wire signed [(23 - 1):0] op_mem_46_20_back;
+  wire op_mem_46_20_push_front_pop_back_en;
+  localparam [(1 - 1):0] const_value_x_000000 = 1'b1;
+  wire signed [(23 - 1):0] cast_internal_ip_36_3_convert;
+  assign ip_1_23 = ip;
+  assign op_mem_46_20_back = op_mem_46_20[0];
+  always @(posedge clk)
+    begin:proc_op_mem_46_20
+      integer i;
+      if (((ce == 1'b1) && (op_mem_46_20_push_front_pop_back_en == 1'b1)))
+        begin
+          op_mem_46_20[0] <= op_mem_46_20_front_din;
+        end
+    end
+  assign cast_internal_ip_36_3_convert = {{6{ip_1_23[22]}}, ip_1_23[22:6]};
+  assign op_mem_46_20_push_front_pop_back_en = 1'b0;
+  assign op = cast_internal_ip_36_3_convert;
+endmodule
+`timescale 1 ns / 10 ps
 
 
 module cic_x10_xlconvert (din, clk, ce, clr, en, dout);
@@ -104,64 +162,6 @@ endgenerate
 
 endmodule
 
-`timescale 1 ns / 10 ps
-module cic_x10_xlregister (d, rst, en, ce, clk, q);
-   parameter d_width = 5;
-   parameter init_value = 'b0;
-
-   input [d_width-1:0] d;
-   input rst, en, ce, clk;
-   output [d_width-1:0] q;
-
-   wire internal_clr, internal_ce;
-
-   assign internal_clr = rst & ce;
-   assign internal_ce  = ce & en;
-
-   synth_reg_w_init #(.width(d_width),
-                      .init_index(2),
-                      .init_value(init_value),
-                      .latency(1))
-   synth_reg_inst(.i(d),
-                  .ce(internal_ce),
-                  .clr(internal_clr),
-                  .clk(clk),
-                  .o(q));
-endmodule
-
-`timescale 1 ns / 10 ps
-module sysgen_shift_a5a7fbd1a7 (
-  input [(23 - 1):0] ip,
-  output [(23 - 1):0] op,
-  input clk,
-  input ce,
-  input clr);
-  wire signed [(23 - 1):0] ip_1_23;
-  localparam signed [(23 - 1):0] const_value = 23'sb00000000000000000000000;
-  reg signed [(23 - 1):0] op_mem_46_20[0:(1 - 1)];
-  initial
-    begin
-      op_mem_46_20[0] = 23'b00000000000000000000000;
-    end
-  wire signed [(23 - 1):0] op_mem_46_20_front_din;
-  wire signed [(23 - 1):0] op_mem_46_20_back;
-  wire op_mem_46_20_push_front_pop_back_en;
-  localparam [(1 - 1):0] const_value_x_000000 = 1'b1;
-  wire signed [(23 - 1):0] cast_internal_ip_36_3_convert;
-  assign ip_1_23 = ip;
-  assign op_mem_46_20_back = op_mem_46_20[0];
-  always @(posedge clk)
-    begin:proc_op_mem_46_20
-      integer i;
-      if (((ce == 1'b1) && (op_mem_46_20_push_front_pop_back_en == 1'b1)))
-        begin
-          op_mem_46_20[0] <= op_mem_46_20_front_din;
-        end
-    end
-  assign cast_internal_ip_36_3_convert = {{6{ip_1_23[22]}}, ip_1_23[22:6]};
-  assign op_mem_46_20_push_front_pop_back_en = 1'b0;
-  assign op = cast_internal_ip_36_3_convert;
-endmodule
 module cic_x10_xlcmult (a, ce, clr, clk, core_ce, core_clr, core_clk, rst, en, p);
  
  parameter core_name0= "";
@@ -266,16 +266,14 @@ cic_x10_mult_gen_v12_0_i0 core_instance0 (
 
 
 `timescale 1 ns / 10 ps
-module  xlcic_compiler_a84f534b3cc58f1caa9dc6578992cae4 (ce,ce_2,ce_20,ce_logic_20,clk,clk_2,clk_20,clk_logic_20,m_axis_data_tdata_real,m_axis_data_tvalid,rst,s_axis_data_tdata_real,s_axis_data_tready);
+module  xlcic_compiler_a98e2825711f2322c7878c5b8c46f6c6 (ce,ce_10,ce_logic_10,clk,clk_10,clk_logic_10,m_axis_data_tdata_real,m_axis_data_tvalid,rst,s_axis_data_tdata_real,s_axis_data_tready);
 
 input ce;
-input ce_2;
-input ce_20;
-input ce_logic_20;
+input ce_10;
+input ce_logic_10;
 input clk;
-input clk_2;
-input clk_20;
-input clk_logic_20;
+input clk_10;
+input clk_logic_10;
 output[22:0] m_axis_data_tdata_real;
 output m_axis_data_tvalid;
 input rst;
@@ -283,81 +281,19 @@ input[15:0] s_axis_data_tdata_real;
 output s_axis_data_tready;
 wire aresetn_net;
 wire[23:0] m_axis_data_tdata_net;
-wire[22:0] m_axis_data_tdata_real_ps_net;
-wire[22:0] m_axis_data_tdata_real_ps_net_captured;
-wire[22:0] m_axis_data_tdata_real_ps_net_or_captured_net;
-wire m_axis_data_tvalid_ps_net;
-wire m_axis_data_tvalid_ps_net_captured;
-wire m_axis_data_tvalid_ps_net_or_captured_net;
 wire[15:0] s_axis_data_tdata_net;
-wire internal_rst_2_net;
   assign aresetn_net = rst | (~ ce);
-  assign m_axis_data_tdata_real_ps_net = m_axis_data_tdata_net[22 : 0];
+  assign m_axis_data_tdata_real = m_axis_data_tdata_net[22 : 0];
   assign s_axis_data_tdata_net[15 : 0] = s_axis_data_tdata_real;
-  assign internal_rst_2_net = (~ rst) & ce_2;
-  assign m_axis_data_tdata_real_ps_net_or_captured_net = m_axis_data_tdata_real_ps_net | m_axis_data_tdata_real_ps_net_captured;
-synth_reg_w_init # (
-        .width (23),
-        .init_index(0),
-        .init_value('b0),
-        .latency(1))
-m_axis_data_tdata_real_ps_net_synchronizer_1 (
-        .i(m_axis_data_tdata_real_ps_net_or_captured_net),
-        .ce(ce_2),
-        .clr(internal_rst_2_net),
-        .clk(clk_2), 
-        .o(m_axis_data_tdata_real)
-    );
-synth_reg_w_init # (
-        .width(23),
-        .init_index(0),
-        .init_value('b0),
-        .latency(1)
-    )
-m_axis_data_tdata_real_ps_net_synchronizer_2 (
-        .i(m_axis_data_tdata_real_ps_net),
-        .ce(m_axis_data_tvalid_ps_net),
-        .clr(internal_rst_2_net),
-        .clk(clk_2), 
-        .o(m_axis_data_tdata_real_ps_net_captured)
-    );
-
-  assign m_axis_data_tvalid_ps_net_or_captured_net = m_axis_data_tvalid_ps_net || m_axis_data_tvalid_ps_net_captured;
-synth_reg_w_init # (
-        .width (1),
-        .init_index(0),
-        .init_value(1'b0),
-        .latency(1))
-m_axis_data_tvalid_ps_net_synchronizer_1 (
-        .i(m_axis_data_tvalid_ps_net_or_captured_net),
-        .ce(ce_2),
-        .clr(internal_rst_2_net),
-        .clk(clk_2), 
-        .o(m_axis_data_tvalid)
-    );
-synth_reg_w_init # (
-        .width(1),
-        .init_index(0),
-        .init_value(1'b0),
-        .latency(1)
-    )
-m_axis_data_tvalid_ps_net_synchronizer_2 (
-        .i(1'b1),
-        .ce(m_axis_data_tvalid_ps_net),
-        .clr(internal_rst_2_net),
-        .clk(clk_2), 
-        .o(m_axis_data_tvalid_ps_net_captured)
-    );
-
   cic_x10_cic_compiler_v4_0_i0 cic_x10_cic_compiler_v4_0_i0_instance(
       .aclk(clk),
       .aclken(ce),
       .aresetn(aresetn_net),
       .m_axis_data_tdata(m_axis_data_tdata_net),
-      .m_axis_data_tvalid(m_axis_data_tvalid_ps_net),
+      .m_axis_data_tvalid(m_axis_data_tvalid),
       .s_axis_data_tdata(s_axis_data_tdata_net),
       .s_axis_data_tready(s_axis_data_tready),
-      .s_axis_data_tvalid(ce_logic_20)
+      .s_axis_data_tvalid(ce_logic_10)
     );
 
  endmodule
@@ -365,14 +301,14 @@ m_axis_data_tvalid_ps_net_synchronizer_2 (
 
 
 `timescale 1 ns / 10 ps
-module  xlfir_compiler_544235f8561a15c6184741340b8d6da7 (ce,ce_20,ce_logic_20,clk,clk_20,clk_logic_20,m_axis_data_tdata_real,m_axis_data_tvalid,rst,s_axis_data_tdata_real,s_axis_data_tready,src_ce,src_clk);
+module  xlfir_compiler_f7f0ebca9a02701da4711e4925863a31 (ce,ce_10,ce_logic_10,clk,clk_10,clk_logic_10,m_axis_data_tdata_real,m_axis_data_tvalid,rst,s_axis_data_tdata_real,s_axis_data_tready,src_ce,src_clk);
 
 input ce;
-input ce_20;
-input ce_logic_20;
+input ce_10;
+input ce_logic_10;
 input clk;
-input clk_20;
-input clk_logic_20;
+input clk_10;
+input clk_logic_10;
 output[32:0] m_axis_data_tdata_real;
 output m_axis_data_tvalid;
 input rst;
@@ -387,19 +323,19 @@ wire m_axis_data_tvalid_ps_net;
 wire m_axis_data_tvalid_ps_net_captured;
 wire m_axis_data_tvalid_ps_net_or_captured_net;
 wire[15:0] s_axis_data_tdata_net;
-wire internal_rst_20_net;
+wire internal_rst_10_net;
   assign aresetn_net = rst | (~ ce);
   assign m_axis_data_tdata_real_ps_net = m_axis_data_tdata_net[32 : 0];
   assign s_axis_data_tdata_net[15 : 0] = s_axis_data_tdata_real;
-  assign internal_rst_20_net = (~ rst) & ce_20;
+  assign internal_rst_10_net = (~ rst) & ce_10;
   synth_reg_w_init # (.width(33),
                   .init_index(0),
                   .init_value('b0),
                   .latency(1))
 m_axis_data_tdata_real_ps_net_synchronizer (.i(m_axis_data_tdata_real_ps_net),
-             .ce(ce_20),
-             .clr(internal_rst_20_net),
-             .clk(clk_20),
+             .ce(ce_10),
+             .clr(internal_rst_10_net),
+             .clk(clk_10),
              .o(m_axis_data_tdata_real));
 
   assign m_axis_data_tvalid_ps_net_or_captured_net = m_axis_data_tvalid_ps_net || m_axis_data_tvalid_ps_net_captured;
@@ -410,9 +346,9 @@ synth_reg_w_init # (
         .latency(1))
 m_axis_data_tvalid_ps_net_synchronizer_1 (
         .i(m_axis_data_tvalid_ps_net_or_captured_net),
-        .ce(ce_20),
-        .clr(internal_rst_20_net),
-        .clk(clk_20), 
+        .ce(ce_10),
+        .clr(internal_rst_10_net),
+        .clk(clk_10), 
         .o(m_axis_data_tvalid)
     );
 synth_reg_w_init # (
@@ -424,8 +360,8 @@ synth_reg_w_init # (
 m_axis_data_tvalid_ps_net_synchronizer_2 (
         .i(1'b1),
         .ce(m_axis_data_tvalid_ps_net),
-        .clr(internal_rst_20_net),
-        .clk(clk_20), 
+        .clr(internal_rst_10_net),
+        .clk(clk_10), 
         .o(m_axis_data_tvalid_ps_net_captured)
     );
 
@@ -437,7 +373,7 @@ m_axis_data_tvalid_ps_net_synchronizer_2 (
       .m_axis_data_tvalid(m_axis_data_tvalid_ps_net),
       .s_axis_data_tdata(s_axis_data_tdata_net),
       .s_axis_data_tready(s_axis_data_tready),
-      .s_axis_data_tvalid(ce_logic_20)
+      .s_axis_data_tvalid(ce_logic_10)
     );
 
  endmodule

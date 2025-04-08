@@ -14,7 +14,7 @@ module top_verilog
      parameter  Coeff_File = "M86_coefficients.dat", //! Coefficients filename
      parameter  Width      = 20,                     //! Number of bits internal registers
      parameter  R          = 10,                     //! Interpolation ratio
-     parameter  M          = 3,                      //! Number of delays
+     parameter  M          = 1,                      //! Number of delays
      parameter  N          = 3                       //! Number of sections
    )
    (
@@ -53,10 +53,6 @@ module top_verilog
   wire                    rst_lo_n;         //! Reset sync to clk_lo, low active
   wire                    rst_hi;           //! Reset sync to clk_hi
   wire                    rst_hi_n;         //! Reset sync to clk_hi, low active
-
-  //! Upconversion CIC x10
-  //   wire  signed [15:0]     real_fc;          //! Data In-Phase filtered and sampled at R*Fx
-  //   wire  signed [15:0]     imag_fc;          //! Data Quadrature filtered and sampled at R*Fx
 
   // --------------------------------------------------------------- //
   // ********************** Clock generation *********************** //

@@ -1,14 +1,15 @@
 //! @title Parameterized FIR filter
 //! @author J. I. Morales (morales.juan.ignacio@gmail.com)
 //! @version 1.1
-//! @date Simple FIR filter with parameterized number of coefficients, signed data version
+//! @date 07/04/25
+//! @brief Simple FIR filter with parameterized number of coefficients, signed data version
 
 `timescale 1ns / 1ps
 
 module fir_param
  #(
-    parameter integer  NBits  = 24,                         //! Number of bits
-    parameter integer  NCoeff = 14,                         //! Number of coefficients
+    parameter   NBits  = 24,                         //! Number of bits
+    parameter   NCoeff = 14,                         //! Number of coefficients
     parameter   Coeff_File = "M14_coefficients.dat"  //! Coefficients filename
   ) 
   (

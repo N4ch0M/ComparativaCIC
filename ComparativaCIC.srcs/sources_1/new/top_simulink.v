@@ -2,7 +2,7 @@
 //! @author J. I. Morales (morales.juan.ignacio@gmail.com)
 //! @version 1.0
 //! @date 05/04/25
-//! @brief Simulink model of the CIC upconverter filter (R=10, M=3, N=3) with the corresponding FIR compensation.
+//! @brief Simulink model of the CIC upconverter filter (R=10, M=3, N=1) with the corresponding FIR compensation.
 //  The operating clocks are: Differential 200 MHz, fx = 7.68 MHz, R*fx = 76.8 MHz
 
 `timescale 1ns / 1ps
