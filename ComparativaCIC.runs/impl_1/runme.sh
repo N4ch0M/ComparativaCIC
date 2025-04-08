@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='D:/Documentos/Xilinx/FILTROS/ParameterizedFIR/FIR.runs/impl_1'
+HD_PWD='D:/Documentos/Xilinx/FILTROS/ComparativaCIC/ComparativaCIC.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -42,6 +42,6 @@ EAStep()
 
 # pre-commands:
 /bin/touch .init_design.begin.rst
-EAStep vivado -log firx2_param.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source firx2_param.tcl -notrace
+EAStep vivado -log top_simulink.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source top_simulink.tcl -notrace
 
 

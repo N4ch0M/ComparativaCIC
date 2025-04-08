@@ -23,7 +23,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log firx2_param.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source firx2_param.tcl" );
+         "-log top_simulink.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_simulink.tcl" );
 
 
 

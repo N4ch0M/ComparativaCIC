@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='D:/Documentos/Xilinx/FILTROS/ParameterizedFIR/FIR.runs/synth_1'
+HD_PWD='D:/Documentos/Xilinx/FILTROS/ComparativaCIC/ComparativaCIC.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log firx2_param.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source firx2_param.tcl
+EAStep vivado -log top_simulink.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_simulink.tcl

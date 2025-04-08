@@ -2,7 +2,7 @@
 //! @author J. I. Morales (morales.juan.ignacio@gmail.com)
 //! @version 1.0
 //! @date 05/04/25
-// ! @brief Instantiate the Simulink and Verilog models of the CIC upconverter filter (R=10, M=3, N=3) with the corresponding FIR compensation. 
+// ! @brief Instantiate the Simulink and Verilog models of the CIC upconverter filter (R=10, M=1, N=3) with the corresponding FIR compensation. 
 //!  The real and imaginary data are read from the files. The output data is saved in different files to further comparation.
 
 
@@ -42,7 +42,6 @@ module top_tb;
   reg signed  [NBits-1:0]   data_real[0:NData-1];   //! Mem data real
   reg signed  [NBits-1:0]   data_imag[0:NData-1];   //! Mem data imag
 
-
   // --------------------------------------------------------------- //
   //*********************** Wire Declarations ***********************//
   // --------------------------------------------------------------- //
@@ -54,9 +53,12 @@ module top_tb;
   wire signed [NBits-1:0]   o_real_2;   //! Output data real, Verilog
   wire signed [NBits-1:0]   o_imag_2;   //! Output data imag, Verilog
 
-
+  // --------------------------------------------------------------- //
+  //******************** Integer Declarations ***********************//
+  // --------------------------------------------------------------- //
   integer                   idx_fx;     //! Index to read the data @ fx
   integer                   idx_fc;     //! Index to write the data @ fc
+
 
   // --------------------------------------------------------------- //
   //*********************** DUT Instantiation ***********************//
@@ -129,15 +131,14 @@ module top_tb;
   assign i_imag = data_imag[idx_fx];
 
 
-  //-------------------- Generate Differential Clock -----------------------
+  //----------------- Generate Differential Clock -------------------//
   initial i_clk_p = 1'b1;
   always #(CLK_PERIOD / 2) i_clk_p = !i_clk_p;
 
   assign i_clk_n = !i_clk_p;
 
-  // --------------------------------------------------------------- //
-  //****************** Save output data to a file *******************//
-  // --------------------------------------------------------------- //
+  
+  //----------------- Save output data to a file -------------------//
   integer file_1, file_2, file_3, file_4;
 
   initial begin

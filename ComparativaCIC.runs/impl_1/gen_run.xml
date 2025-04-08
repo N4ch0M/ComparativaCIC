@@ -1,46 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z045ffg900-2" LaunchTime="1742598004">
-  <File Type="PA-TCL" Name="firx2_param.tcl"/>
-  <File Type="REPORTS-TCL" Name="firx2_param_reports.tcl"/>
-  <File Type="BITSTR-MSK" Name="firx2_param.msk"/>
-  <File Type="RDI-RDI" Name="firx2_param.vdi"/>
-  <File Type="BG-BIT" Name="firx2_param.bit"/>
-  <File Type="BG-DRC" Name="firx2_param.drc"/>
-  <File Type="BG-BGN" Name="firx2_param.bgn"/>
-  <File Type="BG-BIN" Name="firx2_param.bin"/>
-  <File Type="BITSTR-RBT" Name="firx2_param.rbt"/>
-  <File Type="BITSTR-NKY" Name="firx2_param.nky"/>
-  <File Type="BITSTR-BMM" Name="firx2_param_bd.bmm"/>
-  <File Type="BITSTR-MMI" Name="firx2_param.mmi"/>
-  <File Type="BITSTR-SYSDEF" Name="firx2_param.sysdef"/>
+<GenRun Id="impl_1" LaunchPart="xc7z045ffg900-2" LaunchTime="1744128297">
+  <File Type="ROUTE-PWR" Name="top_simulink_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="top_simulink.tcl"/>
+  <File Type="BITSTR-MMI" Name="top_simulink.mmi"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="top_simulink_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="top_simulink_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="top_simulink_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="top_simulink_reports.tcl"/>
+  <File Type="OPT-TIMING" Name="top_simulink_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="top_simulink_opt.dcp"/>
+  <File Type="OPT-DRC" Name="top_simulink_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="top_simulink.hwdef"/>
+  <File Type="PWROPT-DCP" Name="top_simulink_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="top_simulink_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="top_simulink_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="top_simulink_placed.dcp"/>
+  <File Type="PLACE-IO" Name="top_simulink_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="top_simulink_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="top_simulink_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="top_simulink_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="top_simulink_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="top_simulink_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="top_simulink_incremental_reuse_pre_placed.rpt"/>
+  <File Type="BG-BIN" Name="top_simulink.bin"/>
+  <File Type="PLACE-TIMING" Name="top_simulink_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="top_simulink_postplace_pwropt.dcp"/>
+  <File Type="BITSTR-MSK" Name="top_simulink.msk"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="top_simulink_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="top_simulink_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="top_simulink_drc_physopted.rpt"/>
+  <File Type="BITSTR-RBT" Name="top_simulink.rbt"/>
+  <File Type="PHYSOPT-TIMING" Name="top_simulink_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="top_simulink_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="top_simulink_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="top_simulink_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="top_simulink_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="top_simulink_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="top_simulink_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="top_simulink_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="top_simulink_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="top_simulink_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="top_simulink_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="top_simulink_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="top_simulink_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="top_simulink_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="top_simulink_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="top_simulink_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="top_simulink_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="top_simulink_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="top_simulink_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="top_simulink_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="top_simulink_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="top_simulink_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="top_simulink_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="top_simulink_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="top_simulink_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="top_simulink_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="top_simulink_bus_skew_postroute_physopted.rpt"/>
+  <File Type="BG-BIT" Name="top_simulink.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="top_simulink_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="top_simulink_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-NKY" Name="top_simulink.nky"/>
+  <File Type="BITSTR-BMM" Name="top_simulink_bd.bmm"/>
+  <File Type="PDI-FILE" Name="top_simulink.pdi"/>
+  <File Type="RCFI_FILE" Name="top_simulink.rcfi"/>
+  <File Type="CFI_FILE" Name="top_simulink.cfi"/>
+  <File Type="RNPI_FILE" Name="top_simulink.rnpi"/>
+  <File Type="NPI_FILE" Name="top_simulink.npi"/>
+  <File Type="RBD_FILE" Name="top_simulink.rbd"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="firx2_param.ltx"/>
+  <File Type="BITSTR-LTX" Name="top_simulink.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="top_simulink.sysdef"/>
+  <File Type="BG-BGN" Name="top_simulink.bgn"/>
+  <File Type="BG-DRC" Name="top_simulink.drc"/>
+  <File Type="RDI-RDI" Name="top_simulink.vdi"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
-  <File Type="OPT-HWDEF" Name="firx2_param.hwdef"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="firx2_param_incremental_reuse_pre_placed.rpt"/>
-  <File Type="ROUTE-DCP" Name="firx2_param_routed.dcp"/>
-  <File Type="ROUTE-ERROR-DCP" Name="firx2_param_routed_error.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="firx2_param_routed_bb.dcp"/>
-  <File Type="ROUTE-TIMING-PB" Name="firx2_param_timing_summary_routed.pb"/>
-  <File Type="OPT-DCP" Name="firx2_param_opt.dcp"/>
-  <File Type="PLACE-DCP" Name="firx2_param_placed.dcp"/>
-  <File Type="PWROPT-DCP" Name="firx2_param_pwropt.dcp"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="firx2_param_postplace_pwropt.dcp"/>
-  <File Type="PHYSOPT-DCP" Name="firx2_param_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="firx2_param_postroute_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="firx2_param_postroute_physopt_bb.dcp"/>
-  <File Type="PDI-FILE" Name="firx2_param.pdi"/>
-  <File Type="RCFI_FILE" Name="firx2_param.rcfi"/>
-  <File Type="CFI_FILE" Name="firx2_param.cfi"/>
-  <File Type="RNPI_FILE" Name="firx2_param.rnpi"/>
-  <File Type="NPI_FILE" Name="firx2_param.npi"/>
-  <File Type="RBD_FILE" Name="firx2_param.rbd"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PPRDIR/../ParamCIC/ParamCIC.srcs/sources_1/new/firx2_param.v">
+    <File Path="$PSRCDIR/sources_1/ip/cic_x10_0/cic_x10_0.xci">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../ParameterizedFIR/FIR.srcs/sources_1/new/firx2_param.v"/>
-        <Attr Name="ImportTime" Val="1742597875"/>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/ip/cic_x10_0/cic_x10_0.xci"/>
+        <Attr Name="ImportTime" Val="1743808460"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/synchronizer.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/top_simulink.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/cic_int_comp.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../ParamCIC/ParamCIC.srcs/sources_1/new/cic_int_comp.v"/>
+        <Attr Name="ImportTime" Val="1743787981"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/cic_int_param.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../ParamCIC/ParamCIC.srcs/sources_1/new/cic_int_param.v"/>
+        <Attr Name="ImportTime" Val="1743192507"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -49,76 +123,111 @@
     <File Path="$PSRCDIR/sources_1/new/fir_param.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../ParameterizedFIR/FIR.srcs/sources_1/new/fir_param.v"/>
-        <Attr Name="ImportTime" Val="1742589779"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../ParamCIC/ParamCIC.srcs/sources_1/new/fir_param.v"/>
+        <Attr Name="ImportTime" Val="1743205180"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../ParamCIC/ParamCIC.srcs/sources_1/new/fir.v">
+    <File Path="$PSRCDIR/sources_1/new/top_verilog.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../ParameterizedFIR/FIR.srcs/sources_1/new/fir.v"/>
-        <Attr Name="ImportTime" Val="1742494802"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../ParamCIC/ParamCIC.srcs/sources_1/imports/coeff_1/M4_coefficients.dat">
+    <File Path="$PSRCDIR/sources_1/ip/cic_x10_0.xcix">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../ParameterizedFIR/FIR.srcs/coeff_1/M4_coefficients.dat"/>
-        <Attr Name="ImportTime" Val="1742498814"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ParamCIC.srcs/coeff_1/M86_coefficients.dat">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../ParamCIC/ParamCIC.srcs/coeff_1/M86_coefficients.dat"/>
+        <Attr Name="ImportTime" Val="1743784527"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../ParamCIC/ParamCIC.srcs/sources_1/imports/coeff_1/M8_coefficients.dat">
+    <File Path="$PSRCDIR/sim_1/data/real_fx_n10_hex.dat">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../ParameterizedFIR/FIR.srcs/coeff_1/M8_coefficients.dat"/>
-        <Attr Name="ImportTime" Val="1742563747"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../ParamCIC/ParamCIC.srcs/sources_1/imports/coeff_1/M15_coefficients.dat">
+    <File Path="$PSRCDIR/sim_1/data/imag_fx_n10_hex.dat">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../ParameterizedFIR/FIR.srcs/coeff_1/M15_coefficients.dat"/>
-        <Attr Name="ImportTime" Val="1742587119"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../ParamCIC/ParamCIC.srcs/sources_1/imports/coeff_1/M14_coefficients.dat">
+    <File Path="$PSRCDIR/sim_1/data/real_fx_n12_hex.dat">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../ParameterizedFIR/FIR.srcs/coeff_1/M14_coefficients.dat"/>
-        <Attr Name="ImportTime" Val="1742827151"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../ParamCIC/ParamCIC.srcs/sources_1/imports/coeff_1/M81_coefficients.dat">
+    <File Path="$PSRCDIR/sim_1/data/imag_fx_n12_hex.dat">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../ParameterizedFIR/FIR.srcs/coeff_1/M81_coefficients.dat"/>
-        <Attr Name="ImportTime" Val="1742596701"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sim_1/data/real_fx_n8_hex.dat">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sim_1/data/imag_fx_n8_hex.dat">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sim_1/data/real_fx_n14_hex.dat">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sim_1/data/imag_fx_n14_hex.dat">
+      <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="firx2_param"/>
+      <Option Name="TopModule" Val="top_simulink"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/zc706_r1.0.ucf.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>
   <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
     <Filter Type="Utils"/>
+    <File Path="$PPRDIR/../FIR/FIR.srcs/utils_1/imports/synth_1/firx2_param.dcp">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="AutoDcp" Val="1"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
@@ -134,6 +243,6 @@
     <Step Id="route_design"/>
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
-    <Step Id="write_device_image"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>
 </GenRun>
