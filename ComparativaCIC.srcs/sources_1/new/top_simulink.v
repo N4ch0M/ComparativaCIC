@@ -1,9 +1,9 @@
-//! @title Top level Simulink version of the CIC upconverter filters
+//! @title Top level Simulink version of the CIC upconverter filter
 //! @author J. I. Morales (morales.juan.ignacio@gmail.com)
 //! @version 1.0
-//! @date 05/04/25
+//! @date 08/04/25
 //! @brief Simulink model of the CIC upconverter filter (R=10, M=3, N=1) with the corresponding FIR compensation.
-//  The operating clocks are: Differential 200 MHz, fx = 7.68 MHz, R*fx = 76.8 MHz
+//!  The operating clocks are: Differential 200 MHz, fx = 7.68 MHz, R*fx = 76.8 MHz
 
 `timescale 1ns / 1ps
 
@@ -36,18 +36,14 @@ module top_simulink
   // --------------------------------------------------------------- //
 
   //! Clock
-  wire                    clk_lo;           //! Clock DRP (115.2 MHz)
-  wire                    clk_hi;           //! Clock for FIR filters (7.68 MHz, uses TDM)
+  wire                    clk_lo;           //! Clock for sampling signal (7.68 MHz)
+  wire                    clk_hi;           //! Clock for interpolated output (76.8 MHz)
 
   //! Reset
   wire                    rst_lo;           //! Reset sync to clk_lo
   wire                    rst_lo_n;         //! Reset sync to clk_lo, low active
   wire                    rst_hi;           //! Reset sync to clk_hi
   wire                    rst_hi_n;         //! Reset sync to clk_hi, low active
-
-  //! Upconversion CIC x10
-//   wire  signed [15:0]     real_fc;          //! Data In-Phase filtered and sampled at R*Fx
-//   wire  signed [15:0]     imag_fc;          //! Data Quadrature filtered and sampled at R*Fx
 
   // --------------------------------------------------------------- //
   // ********************** Clock generation *********************** //
@@ -67,7 +63,7 @@ module top_simulink
   // ************************** Reset  ***************************** //
   // --------------------------------------------------------------- //
 
-  //! Synchronize asynchronous reset to FIR clock domain
+  //! Synchronize asynchronous reset to signal clock domain
   synchronizer synchronizer_rst_lo
                (
                  .sync_out   (rst_lo),
@@ -75,7 +71,7 @@ module top_simulink
                  .clk        (clk_lo)
                );
 
-  //! Synchronize asynchronous reset to PWM clock domain
+  //! Synchronize asynchronous reset to interpolated output clock domain
   synchronizer synchronizer_rst_hi
                (
                  .sync_out   (rst_hi),

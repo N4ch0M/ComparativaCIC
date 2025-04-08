@@ -1,7 +1,7 @@
 //! @title Comparative of CIC upconverter filters, designed with Simulink and Verilog
 //! @author J. I. Morales (morales.juan.ignacio@gmail.com)
 //! @version 1.0
-//! @date 05/04/25
+//! @date 08/04/25
 // ! @brief Instantiate the Simulink and Verilog models of the CIC upconverter filter (R=10, M=1, N=3) with the corresponding FIR compensation. 
 //!  The real and imaginary data are read from the files. The output data is saved in different files to further comparation.
 
