@@ -4,7 +4,7 @@ This repository presents a comparison between CIC (Cascaded Integrator-Comb) upc
 
 ## Features
 
-- Instantiation of both Simulink and Verilog filter models (see [ParamCIC](https://github.com/N4ch0M/ParamCIC)).
+- Instantiation of both Simulink and Verilog filter models (see [ParamFIR](https://github.com/N4ch0M/ParamFIR) and [ParamCIC](https://github.com/N4ch0M/ParamCIC)).
 - Support for real and imaginary input data loaded from external files.
 - Output results saved for direct comparison and analysis.
 
