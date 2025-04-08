@@ -8,16 +8,16 @@ This repository presents a comparison between CIC (Cascaded Integrator-Comb) upc
 - Support for real and imaginary input data loaded from external files.
 - Output results saved for direct comparison and analysis.
 
-## Python Analysis Script
-
-A Python script is provided to load the simulation output and perform time-domain and frequency-domain analysis.
-
 ## Verilog Design Overview
 
 The top-level modules `top_verilog` and `top_simulink` include a **clock generation block** that derives:
 - *clk_lo* (7.68 MHz): the signal sampling clock.
 - *clk_hi* (76.8 MHz): the interpolated output clock.  
 These clocks are generated from a 200 MHz differential system clock. Asynchronous signals such as reset (*i_rst*) are synchronized internally.
+
+## Python Analysis Script
+
+A Python script is provided to load the simulation output and perform time-domain and frequency-domain analysis.
 
 ## Usage
 
